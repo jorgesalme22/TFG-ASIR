@@ -1,0 +1,15 @@
+$TTL    604800
+@       IN      SOA     srv-ldap.empresa.local. admin.empresa.local. (
+                              2         ; Serial
+                         604800         ; Refresh
+                          86400         ; Retry
+                        2419200         ; Expire
+                         604800 )       ; Negative Cache TTL
+
+@       IN      NS      srv-ldap.empresa.local.
+@       IN      A       192.168.100.10
+
+srv-ldap        IN      A       192.168.100.10
+srv-glpi        IN      A       192.168.100.20
+glpi            IN      A       192.168.100.20
+portal          IN      A       192.168.1.171

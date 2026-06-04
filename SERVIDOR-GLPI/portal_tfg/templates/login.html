@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Portal de Incidencias</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: Arial, sans-serif; background: #f0f2f5;
+           display: flex; justify-content: center;
+           align-items: center; min-height: 100vh; }
+    .card { background: #fff; padding: 2.5rem; border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1); width: 360px; }
+    .logo { color: #1F5C99; font-size: 1.5rem; font-weight: bold;
+            margin-bottom: 0.3rem; }
+    .sub  { color: #888; font-size: 0.85rem; margin-bottom: 2rem; }
+    label { display: block; font-size: 0.85rem; color: #444;
+            margin-bottom: 0.3rem; }
+    input { width: 100%; padding: 0.65rem 0.9rem; border: 1px solid #ddd;
+            border-radius: 6px; font-size: 0.95rem; margin-bottom: 1.2rem; }
+    input:focus { outline: none; border-color: #1F5C99; }
+    button { width: 100%; padding: 0.75rem; background: #1F5C99;
+             color: #fff; border: none; border-radius: 6px;
+             font-size: 1rem; cursor: pointer; }
+    button:hover { background: #17609E; }
+    .error { color: #c55a11; font-size: 0.85rem; margin-top: 1rem;
+             padding: 0.5rem; background: #FCE4D6; border-radius: 4px; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="logo">Portal de Incidencias</div>
+    <div class="sub">empresa.local — Autenticación LDAP</div>
+    <form method="POST">
+      <label>Usuario</label>
+      <input type="text" name="usuario" required autofocus
+             placeholder="tu usuario LDAP">
+      <label>Contraseña</label>
+      <input type="password" name="password" required
+             placeholder="tu contraseña">
+      <button type="submit">Entrar</button>
+    </form>
+    {% if error %}
+    <div class="error">{{ error }}</div>
+    {% endif %}
+  </div>
+</body>
+</html>

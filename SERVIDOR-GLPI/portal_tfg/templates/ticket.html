@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Nueva Incidencia</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: Arial, sans-serif; background: #f0f2f5; padding: 1rem; }
+    .card { background: #fff; padding: 1.5rem; border-radius: 10px;
+            max-width: 640px; margin: 0 auto;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+    .header { display: flex; justify-content: space-between;
+              align-items: center; margin-bottom: 1rem; }
+    h1 { color: #1F5C99; font-size: 1.2rem; }
+    .user { color: #666; font-size: 0.85rem; }
+    .logout { color: #999; text-decoration: none; font-size: 0.85rem; }
+    label { display: block; font-size: 0.85rem; color: #444;
+            margin-bottom: 0.2rem; margin-top: 0.8rem; }
+    input, textarea, select { width: 100%; padding: 0.5rem 0.8rem;
+        border: 1px solid #ddd; border-radius: 6px; font-size: 0.9rem; }
+    textarea { height: 80px; resize: vertical; }
+    button { margin-top: 1rem; width: 100%; padding: 0.65rem;
+             background: #1F5C99; color: #fff; border: none;
+             border-radius: 6px; font-size: 1rem; cursor: pointer; }
+    .exito { background: #E2EFDA; border: 1px solid #375623;
+             color: #375623; padding: 0.8rem; border-radius: 6px;
+             margin-bottom: 1rem; font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="header">
+      <div>
+        <h1>Nueva Incidencia</h1>
+        <span class="user">Usuario: <strong>{{ usuario }}</strong></span>
+      </div>
+      <a href="/logout" class="logout">Cerrar sesión</a>
+    </div>
+    {% if ticket_id %}
+    <div class="exito">Ticket <strong>#{{ ticket_id }}</strong> creado en GLPI.</div>
+    {% endif %}
+    <form method="POST">
+      <label>Título *</label>
+      <input type="text" name="titulo" required placeholder="Descripción breve">
+      <label>Descripción *</label>
+      <textarea name="descripcion" required placeholder="Detalla el problema..."></textarea>
+      {% if urgencia %}
+      <div style="background:#EBF3FB;padding:0.5rem 0.8rem;border-radius:6px;margin-top:0.8rem;font-size:0.9rem;">
+  	⚡ Urgencia asignada automáticamente: <strong>
+  	{% if urgencia == 5 %}Muy alta
+  	{% elif urgencia == 4 %}Alta
+  	{% elif urgencia == 3 %}Media
+  	{% elif urgencia == 2 %}Baja
+  	{% else %}Muy baja{% endif %}
+  	</strong>
+      </div>
+      {% endif %}
+      <label>Categoría</label>
+      <select name="categoria">
+        <option>Hardware</option>
+        <option>Software</option>
+        <option>Red y conectividad</option>
+        <option>Accesos y permisos</option>
+        <option>Otro</option>
+      </select>
+      <button type="submit">Crear incidencia</button>
+    </form>
+  </div>
+</body>
+</html>

@@ -1,0 +1,14 @@
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    enp0s3:
+      dhcp4: true
+    enp0s8:
+      dhcp4: no
+      addresses:
+        - 192.168.100.10/24
+    enp0s9:
+      dhcp4: true
+      dhcp4-overrides:
+        use-routes: false

@@ -1,0 +1,49 @@
+Server version: Apache/2.4.58 (Ubuntu)
+Server built:   2026-05-05T13:22:45
+PHP 8.3.6 (cli) (built: May 25 2026 13:12:06) (NTS)
+Copyright (c) The PHP Group
+Zend Engine v4.3.6, Copyright (c) Zend Technologies
+    with Zend OPcache v8.3.6, Copyright (c), by Zend Technologies
+mariadb  Ver 15.1 Distrib 10.11.14-MariaDB, for debian-linux-gnu (x86_64) using  EditLine wrapper
+Python 3.12.3
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 192.168.100.20. Set the 'ServerName' directive globally to suppress this message
+Loaded Modules:
+ core_module (static)
+ so_module (static)
+ watchdog_module (static)
+ http_module (static)
+ log_config_module (static)
+ logio_module (static)
+ version_module (static)
+ unixd_module (static)
+ access_compat_module (shared)
+ alias_module (shared)
+ auth_basic_module (shared)
+ authn_core_module (shared)
+ authn_file_module (shared)
+ authz_core_module (shared)
+ authz_host_module (shared)
+ authz_user_module (shared)
+ autoindex_module (shared)
+ deflate_module (shared)
+ dir_module (shared)
+ env_module (shared)
+ filter_module (shared)
+ headers_module (shared)
+ mime_module (shared)
+ mpm_prefork_module (shared)
+ negotiation_module (shared)
+ php_module (shared)
+ proxy_module (shared)
+ proxy_http_module (shared)
+ reqtimeout_module (shared)
+ rewrite_module (shared)
+ security2_module (shared)
+ setenvif_module (shared)
+ socache_shmcb_module (shared)
+ ssl_module (shared)
+ status_module (shared)
+ unique_id_module (shared)
+Flask                 3.0.2
+ldap3                 2.9.1
+requests              2.31.0
